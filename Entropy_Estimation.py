@@ -1,15 +1,15 @@
 from numpy import array, copy, concatenate, sum, log, append
 from numpy.random import choice
-from statistics import mean
-from pandas import DataFrame
     
 class Entropy:
     
     alpha = array([1, 2, 5, 10, 20, 50])
     
-    #Initializer / Sample Attributes
-    def __init__(self, sample, population_min=None, population_max=None,
-                 N_k=100, N_x=100):
+    def __init__(self, 
+                 sample, population_min=None, 
+                 population_max=None,
+                 N_k=100, 
+                 N_x=100):
         
         self.sample = array(sample)
         self.population_min= population_min
@@ -27,27 +27,22 @@ class Entropy:
         
         delta = self.sorted_sample[1:] - self.sorted_sample[:-1]
         
-        if self.population_min == None and self.population_max == None: 
-            
+        if self.population_min == None and self.population_max == None:
             x_min = [self.sorted_sample[0] - delta[0]]
             x_max = [self.sorted_sample[-1] + delta [-1]]
             extended_sample = concatenate([x_min, self.sorted_sample, x_max])
             
-        elif self.population_min != None and self.population_max != None: 
-            
-            #CHECK X_MIN and X_MAX
+        elif self.population_min != None and self.population_max != None:
             x_min = [self.population_min]
             x_max = [self.population_max]
             extended_sample = concatenate([x_min, self.sorted_sample, x_max])
             
         elif self.population_min != None and self.population_max == None:
-            
              x_min = [self.population_min]
              x_max = [self.sorted_sample[-1] + delta [-1]]
              extended_sample = concatenate([x_min, self.sorted_sample, x_max])
              
         elif self.population_min == None and self.population_max != None:  
-            
             x_min = [self.sorted_sample[0] - delta[0]]
             x_max = [self.population_max]
             extended_sample = concatenate([x_min, self.sorted_sample, x_max])
