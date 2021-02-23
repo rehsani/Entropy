@@ -48,3 +48,30 @@ plt.text(0.05, 0.9,
 ```
 
 ![](https://github.com/rehsani/Entropy/blob/master/Example1.png)
+
+## Example 2 - MATLAB
+
+Put the entropy.m file in the directory you are working with.
+Here we use a sample of size 5,000 from a Guassian distribution (μ=0, σ=1) with known true entropy (H=1.4187...) to test the algorithm:
+
+```matlab
+mu = 0;
+sigma = 1;
+H_true = 0.5 * log(2 * pi * exp(1) * sigma ^ 2);
+
+n = 5000;
+sample = normrnd(mu, sigma, 1, n);
+H = entropy(sample, 0.25, 100, 500);
+```
+
+Let's take a look at the estimated entropy:
+
+```python
+boxplot(H);
+xticks([]);
+ylabel('Estimated Entropy');
+txt = 'True Entropy = %.3f\nMean Estimated Entropy = %.3f';
+text(0.05, 0.9, sprintf(txt, H_true, mean(H)), 'Units','normalized');
+```
+
+![](https://github.com/rehsani/Entropy/blob/master/Example2.png)
