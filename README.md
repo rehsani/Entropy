@@ -52,7 +52,7 @@ plt.text(0.05, 0.9,
 ## Example 2 - MATLAB
 
 Put the entropy.m file in the directory you are working with.
-Here we use a sample of size 5,000 from a Guassian distribution (μ=0, σ=1) with known true entropy (H=1.4187...) to test the algorithm:
+Here we use a sample of size 5,000 from a Guassian distribution (μ=0, σ=1) with known true entropy (H=1.4189...) to test the algorithm:
 
 ```matlab
 mu = 0;
