@@ -48,4 +48,4 @@ plt.text(0.05, 0.9,
          transform = plt.gca().transAxes)
 ```
 
-![alt text](https://drive.google.com/file/d/1Dbf33eH1BLMEb15oun5uQgnxEBFpoTWK/view?usp=sharing)
+![](https://github.com/rehsani/Entropy/blob/master/Example1.png)
