@@ -9,7 +9,6 @@ First, we need to import some required libraries:
 
 ```python
 import numpy as np
-np.random.seed(42)
 import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 300
 ```
