@@ -13,14 +13,13 @@ np.random.seed(42)
 import matplotlib.pyplot as plt
 plt.rcParams['figure.dpi'] = 300
 ```
+## Example 1 - Python
 
 Put the entropy.py file in the directory you are working with and import it as a library:
 
 ```python
 import entropy
 ```
-
-## Example 1
 
 Here we use a sample of size 5,000 from a Guassian distribution (μ=0, σ=1) with known true entropy (H=1.4187...) to test the algorithm:
 
