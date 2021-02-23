@@ -22,7 +22,7 @@ import entropy
 
 ## Example 1
 
-Here we use a sample of size 5,000 from a Guassian distribution ($\mu=0, \sigma=1$) with known true entropy ($H_{t}=1.419$) to test the algorithm:
+Here we use a sample of size 5,000 from a Guassian distribution (μ=0, σ=1) with known true entropy (H=1.4187...) to test the algorithm:
 
 ```python
 mu = 0
