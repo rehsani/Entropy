@@ -5,16 +5,16 @@
 % ****                                                                ****
 % ****                                                                ****
 % ****      \                                                 /       ****
-% ****       --- THIS IS THE MAIN FUNCTION TO EXECUTE QS ---        ****
+% ****       --- THIS IS THE MAIN FUNCTION TO EXECUTE QS ---          ****
 % ************************************************************************
 
-function [ sample , alpha , N_b , N_k ] = entropy(sample ,alpha ,N_b, N_k)
-    n = int64(ceil(alpha * size(sample)));
+function [ h ] = entropy(sample ,alpha ,N_b, N_k)
+    n = ceil(alpha * size(sample, 2));
     x_min = min(sample);
     x_max = max(sample);
-    sort(sample)
+    sort(sample);
     for ii = 1:N_b
-        sample_b = datasample(sample(2:end-1), size(sample));
+        sample_b = datasample(sample(2:end-1), size(sample, 2));
         for jj = 1:N_k
             X_alpha(jj, :) = datasample(sample_b, n, 'Replace', false);
         end
@@ -24,4 +24,5 @@ function [ sample , alpha , N_b , N_k ] = entropy(sample ,alpha ,N_b, N_k)
         H = (1/n) * sum(log(n * dZ));
         h(ii) = H;
     end
+end
     
