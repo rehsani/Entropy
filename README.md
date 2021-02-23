@@ -39,14 +39,13 @@ Let's take a look at the estimated entropy:
 
 ```python
 plt.boxplot(H)
-plt.xticks([])
-plt.ylabel('Estimated Entropy', fontsize=5)
-plt.yticks(fontsize=4)
+plt.ylabel('Estimated Entropy')
 plt.text(0.05, 0.9,
          'True Entropy = {} \nMean Estimated Entropy = {} \n'.
          format(H_true.round(3), H.mean().round(3)),
-         fontsize=4,
          horizontalalignment='left',
          verticalalignment='center',
          transform = plt.gca().transAxes)
 ```
+
+![alt text](https://drive.google.com/file/d/1Dbf33eH1BLMEb15oun5uQgnxEBFpoTWK/view?usp=sharing)
