@@ -60,7 +60,7 @@ class entropy:
         H = []
         for i in range(self.N_b):
             sample_b = np.random.choice(self.sample[1:-1], self.sample.size)
-            X_alpha = [np.random.choice(sample_b[1:-1], n, replace=False) 
+            X_alpha = [np.random.choice(sample_b[1:-1], n-1, replace=False) 
                        for _ in range(self.N_k)]
             X_alpha = np.vstack(X_alpha)
             X_alpha.sort(axis=1)
