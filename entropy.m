@@ -14,9 +14,10 @@ function [ h ] = entropy(sample ,alpha ,N_b, N_k)
     x_max = max(sample);
     sort(sample);
     for ii = 1:N_b
+        X_alpha = [];
         sample_b = datasample(sample(2:end-1), size(sample, 2));
         for jj = 1:N_k
-            X_alpha(jj, :) = datasample(sample_b, n, 'Replace', false);
+            X_alpha(jj, :) = datasample(sample_b, n-1, 'Replace', false);
         end
         X_alpha = sort(X_alpha, 2);
         Z = [x_min mean(X_alpha, 1) x_max];
